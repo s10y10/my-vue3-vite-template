@@ -12,7 +12,6 @@ module.exports = {
     "at-rule-empty-line-before": null,
     "no-descending-specificity": null,
     "declaration-block-no-duplicate-properties": true,
-    "number-leading-zero": "never",
     "order/order": ["custom-properties", "declarations"],
     "order/properties-order": [
       // 规则顺序

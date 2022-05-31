@@ -1,9 +1,9 @@
-import { defineStore } from "pinia";
+import useMainStore from "./main";
+import useCounterStore from "./counter";
 
-export const mainStore = defineStore("mainStore", {
-  state: () => {
-    return { count: 0 };
-  },
-  getters: {},
-  actions: {},
-});
+export default function useStore() {
+  return {
+    main: useMainStore(),
+    counter: useCounterStore(),
+  };
+}
