@@ -1,9 +1,9 @@
 {
   "compilerOptions": {
     "types": ["vite/client", "vite-plugin-svg-icons/client"],
-    "baseUrl": "src",
+    "baseUrl": ".",
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./src/*"]
     },
     "target": "esnext",
     "useDefineForClassFields": true,

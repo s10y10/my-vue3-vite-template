@@ -1,0 +1,10 @@
+@import "color.scss";
+@import "global.scss";
+@import "element-plus.scss";
+@import "transition.scss";
+@import "variable.scss";
+@import "normalize.scss";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

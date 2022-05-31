@@ -5,19 +5,21 @@ import HelloWorld from "./components/HelloWorld.vue";
 </script>
 
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
+  <img class="inline" alt="Vue logo" src="./assets/logo.png" />
   <svg-icon name="pen" />
   <el-button>自动引入一个Elment-Button</el-button>
   <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
 </template>
 
-<style>
+<style lang="scss">
 #app {
+  position: relative;
+  display: block;
+  margin-top: 60px;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: black;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
