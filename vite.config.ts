@@ -1,32 +1,50 @@
-import { resolve } from "path";
-import { defineConfig } from "vite";
-import vue from "@vitejs/plugin-vue";
-import legacy from "@vitejs/plugin-legacy";
-import { createSvgIconsPlugin } from "vite-plugin-svg-icons";
-import Components from "unplugin-vue-components/vite";
-import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
-import AutoImport from "unplugin-auto-import/vite";
+import { resolve } from 'path'
+import { defineConfig } from 'vite'
+import vue from '@vitejs/plugin-vue'
+import legacy from '@vitejs/plugin-legacy'
+import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
+import Components from 'unplugin-vue-components/vite'
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+import AutoImport from 'unplugin-auto-import/vite'
+import EslintPugin from 'vite-plugin-eslint'
 
 // https://vitejs.dev/config/
 export default defineConfig({
   resolve: {
     alias: {
-      "@": resolve("./src"),
-    },
+      '@': resolve('./src')
+    }
   },
   plugins: [
     AutoImport({
-      imports: ["vue", "vue-router", "pinia"],
-      dts: "src/auto-imports.d.ts",
+      imports: [
+        'vue',
+        'vue-router',
+        'pinia',
+        {
+          vue: ['withDefaults']
+        }
+      ],
+      dts: 'src/auto-imports.d.ts',
+      eslintrc: {
+        enabled: true, // 默认false, true启用。生成一次就可以，避免每次工程启动都生成
+        filepath: './.eslintrc-auto-import.json',
+        globalsPropValue: true
+      }
     }),
     vue(),
+    EslintPugin({
+      include: ['src/**/*.js', 'src/**/*.vue', 'src/**/*.jsx', 'src/**/*.ts'],
+      exclude: ['./node_modules/**'],
+      cache: false
+    }),
     legacy(),
     Components({
-      resolvers: [ElementPlusResolver()],
+      resolvers: [ElementPlusResolver()]
     }),
     createSvgIconsPlugin({
-      iconDirs: [resolve(process.cwd(), "src/assets/icons")],
-      symbolId: "icon-[dir]-[name]",
-    }),
-  ],
-});
+      iconDirs: [resolve(process.cwd(), 'src/assets/icons')],
+      symbolId: 'icon-[dir]-[name]'
+    })
+  ]
+})

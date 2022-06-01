@@ -1,4 +1,6 @@
-import axios from "axios";
-import type {} from "axios";
+import axios from 'axios'
+import type {} from 'axios'
 
-export default {};
+console.log(axios)
+
+export default {}

@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import useStore from "@/store";
+import useStore from '@/store'
 
-defineProps<{ msg: string }>();
+defineProps<{ msg: string }>()
 
-const { counter } = useStore();
-const { count, getterCount } = storeToRefs(counter);
+const { counter } = useStore()
+const { count, getterCount } = storeToRefs(counter)
 
 const handleClick = () => {
-  counter.addCountAsync();
-};
+  counter.addCountAsync()
+}
 </script>
 
 <template>

@@ -1,9 +1,9 @@
-const useMainStore = defineStore("main", {
+const useMainStore = defineStore('main', {
   state: () => {
     return {
-      name: "main",
-    };
-  },
-});
+      name: 'main'
+    }
+  }
+})
 
-export default useMainStore;
+export default useMainStore

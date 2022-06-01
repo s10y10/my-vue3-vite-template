@@ -17,10 +17,18 @@
   },
   "devDependencies": {
     "@types/node": "^17.0.36",
+    "@typescript-eslint/eslint-plugin": "^5.27.0",
+    "@typescript-eslint/parser": "^5.27.0",
     "@vitejs/plugin-legacy": "^1.8.2",
     "@vitejs/plugin-vue": "^2.3.3",
+    "@vue/eslint-config-prettier": "^6.0.0",
+    "@vue/eslint-config-typescript": "^10.0.0",
     "autoprefixer": "^10.4.7",
+    "eslint": "^8.16.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-vue": "^8.0.1",
     "postcss": "^8.4.14",
+    "prettier": "^2.6.2",
     "sass": "^1.52.1",
     "stylelint": "^14.8.5",
     "stylelint-config-recommended-scss": "^6.0.0",
@@ -34,7 +42,8 @@
     "unplugin-auto-import": "^0.8.6",
     "unplugin-vue-components": "^0.19.6",
     "vite": "^2.9.9",
+    "vite-plugin-eslint": "^1.6.1",
     "vite-plugin-svg-icons": "^2.0.1",
-    "vue-tsc": "^0.34.7"
+    "vue-tsc": "^0.35.2"
   }
 }

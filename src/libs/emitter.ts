@@ -1,6 +1,6 @@
-import mitt from "mitt";
+import mitt from 'mitt'
 
-export default mitt();
+export default mitt()
 
 // listen to an event
 // emitter.on('foo', e => console.log('foo', e) )
