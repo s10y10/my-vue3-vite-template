@@ -1,21 +1,20 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
+import useLocale from './hooks/useLocale'
+
+const { locale } = useLocale()
 </script>
 
 <template>
-  <img class="inline" alt="Vue logo" src="./assets/logo.png" />
-  <svg-icon name="pen" />
-  <el-button>自动引入一个Elment-Button</el-button>
-  <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
+  <ElConfigProvider :locale="locale">
+    <router-view></router-view>
+  </ElConfigProvider>
 </template>
 
-<style lang="scss">
+<style>
 #app {
   position: relative;
-  display: block;
-  margin-top: 60px;
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  color: black;
-  text-align: center;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
 }
 </style>
