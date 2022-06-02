@@ -1,7 +1,17 @@
 <script setup lang="ts">
 import useLocale from './hooks/useLocale'
+import { getWeather } from './api'
 
 const { locale } = useLocale()
+
+//test
+onMounted(async () => {
+  const res = await getWeather({
+    apiKey: '',
+    area: '北京市'
+  })
+  console.log(res)
+})
 </script>
 
 <template>

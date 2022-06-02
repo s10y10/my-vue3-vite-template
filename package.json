@@ -3,9 +3,12 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "dev": "node ./script/env.config.js && vite --host",
-    "build": "node ./script/env.config.js && vue-tsc --noEmit && vite build",
+    "dev": "node env.config.js && vite --host",
+    "build": "node env.config.js && vue-tsc --noEmit && vite build",
     "preview": "vite preview"
+  },
+  "engines": {
+    "node": ">= 16.0.0"
   },
   "dependencies": {
     "axios": "^0.27.2",
@@ -43,6 +46,7 @@
     "unplugin-vue-components": "^0.19.6",
     "vite": "^2.9.9",
     "vite-plugin-eslint": "^1.6.1",
+    "vite-plugin-mock": "^2.9.6",
     "vite-plugin-svg-icons": "^2.0.1",
     "vue-tsc": "^0.35.2"
   }
