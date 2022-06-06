@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "node env.config.js && vite --host",
     "build": "node env.config.js && vue-tsc --noEmit && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "zip": "node ./script/zip"
   },
   "engines": {
     "node": ">= 16.0.0"
@@ -26,6 +27,7 @@
     "@vitejs/plugin-vue": "^2.3.3",
     "@vue/eslint-config-prettier": "^6.0.0",
     "@vue/eslint-config-typescript": "^10.0.0",
+    "adm-zip": "^0.5.9",
     "autoprefixer": "^10.4.7",
     "eslint": "^8.16.0",
     "eslint-plugin-prettier": "^3.3.1",
