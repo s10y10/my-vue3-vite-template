@@ -65,6 +65,18 @@
     "watchEffect": true,
     "watchPostEffect": true,
     "watchSyncEffect": true,
-    "withDefaults": true
+    "withDefaults": true,
+    "Component": true,
+    "ComponentPublicInstance": true,
+    "ComputedRef": true,
+    "InjectionKey": true,
+    "PropType": true,
+    "Ref": true,
+    "VNode": true,
+    "WritableComputedRef": true,
+    "onBeforeRouteLeave": true,
+    "onBeforeRouteUpdate": true,
+    "toValue": true,
+    "useLink": true
   }
 }
