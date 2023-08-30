@@ -1,7 +1,7 @@
 {
   "name": "my-vue3-vite-template",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "scripts": {
     "dev": "node env.config.js && vite --host",
     "build": "node env.config.js && vue-tsc --noEmit && vite build",
@@ -9,6 +9,7 @@
     "zip": "node ./script/zip",
     "prepare": "husky install"
   },
+  "type": "module",
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
