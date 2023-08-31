@@ -7,8 +7,8 @@ const { locale } = useLocale()
 //test
 onMounted(async () => {
   const res = await getWeather({
-    apiKey: '',
-    area: '北京市'
+    type: 1,
+    msg: '北京'
   })
   console.log(res)
 })

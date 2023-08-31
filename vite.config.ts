@@ -6,8 +6,8 @@ import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import AutoImport from 'unplugin-auto-import/vite'
-import EslintPugin from 'vite-plugin-eslint'
 import { viteMockServe } from 'vite-plugin-mock'
+import Commonjs from 'vite-plugin-commonjs'
 
 // https://vitejs.dev/config/
 export default defineConfig(() => {
@@ -20,6 +20,7 @@ export default defineConfig(() => {
       }
     },
     plugins: [
+      Commonjs(),
       AutoImport({
         imports: [
           'vue',
@@ -37,11 +38,6 @@ export default defineConfig(() => {
         }
       }),
       vue(),
-      EslintPugin({
-        include: ['src/**/*.js', 'src/**/*.vue', 'src/**/*.jsx', 'src/**/*.ts'],
-        exclude: ['./node_modules/**'],
-        cache: false
-      }),
       legacy(),
       Components({
         resolvers: [ElementPlusResolver()],
@@ -53,8 +49,7 @@ export default defineConfig(() => {
       }),
       // 配置mock
       viteMockServe({
-        mockPath: '/mock',
-        localEnabled: true
+        mockPath: '/mock'
       })
     ],
     build: {
@@ -68,12 +63,15 @@ export default defineConfig(() => {
         }
       }
     },
+    optimizeDeps: {
+      include: ['element-plus/es/components/button/style/css']
+    },
     server: {
       proxy: {
-        '/api': {
+        '/proxy': {
           target: env.VITE_BASE_URL,
           changeOrigin: true,
-          rewrite: path => path.replace(/^\/api/, '')
+          rewrite: path => path.replace(/^\/proxy/, '')
           // configure: (proxy, options) => {
           //   const cookieList = []
           //   const cookie = loginConfig.cookie

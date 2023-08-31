@@ -1,11 +1,10 @@
-const fs = require('fs')
+import fs from 'fs'
 const { npm_config_env } = process.env
 
 const envConfig = {
   local: {
     VITE_APP_ENV: 'local',
-    // VITE_BASE_URL: 'https://www.***.test.net'
-    VITE_BASE_URL: 'https://api.apishop.net' //测试用
+    VITE_BASE_URL: 'http://v.api.aa1.cn' //测试用
   },
   dev: {
     VITE_APP_ENV: 'dev',
